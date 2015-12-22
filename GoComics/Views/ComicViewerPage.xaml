@@ -1,0 +1,43 @@
+﻿<shared:NavigationAwarePage
+    x:Class="GoComics.Views.ComicViewerPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:core="using:Microsoft.Xaml.Interactions.Core"
+    xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
+    xmlns:local="using:GoComics"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:shared="using:GoComics.Shared.Views"
+    xmlns:mvvm="using:Prism.Windows.Mvvm"
+    mvvm:ViewModelLocator.AutoWireViewModel="True"
+    x:Uid="ComicViewer"
+    x:Name="ComicViewer"
+    IsTabStop="false"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <Button Command="{Binding LoadPreviousPageCommand}"
+                    IsEnabled="{Binding Path=CanLoadPreviousPage}">Previous</Button>
+            <TextBlock Grid.Column="1" Text="{Binding Path=Comic.DisplayDateString}" />
+            <Button Grid.Column="2"
+                    Command="{Binding LoadNextPageCommand}"
+                    IsEnabled="{Binding Path=CanLoadNextPage}">Next</Button>
+        </Grid>
+
+        <Image Grid.Row="1"
+               Height="{Binding Comic.ImageHeight}" Width="{Binding Comic.ImageWidth}"
+               Source="{Binding Comic.ImageLink}"></Image>
+    </Grid>
+</shared:NavigationAwarePage>

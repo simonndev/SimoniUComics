@@ -1,0 +1,63 @@
+﻿<shared:NavigationAwarePage
+    x:Class="GoComics.Views.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:core="using:Microsoft.Xaml.Interactions.Core"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
+    xmlns:designed="using:GoComics.DesignedTimeViewModels"
+    xmlns:mvvm="using:Prism.Windows.Mvvm"
+    xmlns:shared="using:GoComics.Shared.Views"
+    xmlns:behaviors="using:GoComics.Behaviors"
+    IsTabStop="False"
+    d:DataContext="{d:DesignInstance designed:MainPageDesignViewModel}"
+    mvvm:ViewModelLocator.AutoWireViewModel="True"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        
+        <GridView Grid.Row="1"
+                  ItemsSource="{Binding Path=AllTimeFeatureCollection}"
+                  SelectionMode="None"
+                  IsItemClickEnabled="True"
+                  Margin="12, 0, 12, 0">
+            <interactivity:Interaction.Behaviors>
+                <core:EventTriggerBehavior EventName="ItemClick">
+                    <behaviors:NavigateToPageFromEventArgs EventArgsParameterPath="ClickedItem.Id" TargetPage="GoComics.Views.ComicViewerPage" />
+                </core:EventTriggerBehavior>
+            </interactivity:Interaction.Behaviors>
+            <GridView.ItemTemplate>
+                <DataTemplate>
+                    <Grid HorizontalAlignment="Left" Width="250" Height="250">
+                        <Border Background="{ThemeResource ListViewItemPlaceholderBackgroundThemeBrush}">
+                            <Image Source="{Binding Path=Icon}" Stretch="UniformToFill" AutomationProperties.Name="{Binding Path=Title}" />
+                        </Border>
+                        <StackPanel VerticalAlignment="Bottom" Background="{ThemeResource ListViewItemOverlayBackgroundThemeBrush}">
+                            <TextBlock Text="{Binding Path=Title}"
+                                       Foreground="{ThemeResource ListViewItemOverlayForegroundThemeBrush}"
+                                       Style="{StaticResource TitleTextBlockStyle}"
+                                       Height="60" Margin="15,0,15,0" />
+                            <TextBlock Foreground="{ThemeResource ListViewItemOverlayForegroundThemeBrush}"
+                                       Style="{StaticResource SubtitleTextBlockStyle}"
+                                       Margin="15,0,15,0">
+                                <Run Text="by" />
+                                <Run Text="{Binding Path=Author}" />
+                            </TextBlock>
+                        </StackPanel>
+                    </Grid>
+                </DataTemplate>
+            </GridView.ItemTemplate>
+            <GridView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <ItemsWrapGrid GroupPadding="0,0,70,0" MaximumRowsOrColumns="5" />
+                </ItemsPanelTemplate>
+            </GridView.ItemsPanel>
+        </GridView>
+    </Grid>
+</shared:NavigationAwarePage>

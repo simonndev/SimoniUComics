@@ -1,0 +1,186 @@
+﻿[{
+	"feature_id": 32,
+	"position": 0,
+	"feature": {
+		"id": 32,
+		"title": "Calvin and Hobbes",
+		"author": "Bill Watterson",
+		"icon_url": "http://avatar.amuniversal.com/feature_avatars/avatars_large/features/ch/tiny_avatar.png",
+		"icons": {
+			"large": "http://avatar.amuniversal.com/feature_avatars/avatars_large/features/ch/avatar.png",
+			"mid": "http://avatar.amuniversal.com/feature_avatars/avatars_large/features/ch/mid_avatar.png",
+			"small": "http://avatar.amuniversal.com/feature_avatars/avatars_large/features/ch/small_avatar.png",
+			"tiny": "http://avatar.amuniversal.com/feature_avatars/avatars_large/features/ch/tiny_avatar.png"
+		},
+		"political_slant": null
+	}
+},
+{
+	"feature_id": 72,
+	"position": 1,
+	"feature": {
+		"id": 72,
+		"title": "Garfield",
+		"author": "Jim Davis",
+		"icon_url": "http://avatar.amuniversal.com/feature_avatars/avatars_large/features/ga/tiny_avatar.png",
+		"icons": {
+			"large": "http://avatar.amuniversal.com/feature_avatars/avatars_large/features/ga/avatar.png",
+			"mid": "http://avatar.amuniversal.com/feature_avatars/avatars_large/features/ga/mid_avatar.png",
+			"small": "http://avatar.amuniversal.com/feature_avatars/avatars_large/features/ga/small_avatar.png",
+			"tiny": "http://avatar.amuniversal.com/feature_avatars/avatars_large/features/ga/tiny_avatar.png"
+		},
+		"political_slant": null
+	}
+},
+{
+	"feature_id": 56,
+	"position": 2,
+	"feature": {
+		"id": 56,
+		"title": "Doonesbury",
+		"author": "Garry Trudeau",
+		"icon_url": "http://avatar.amuniversal.com/feature_avatars/avatars_large/features/db/tiny_avatar.png",
+		"icons": {
+			"large": "http://avatar.amuniversal.com/feature_avatars/avatars_large/features/db/avatar.png",
+			"mid": "http://avatar.amuniversal.com/feature_avatars/avatars_large/features/db/mid_avatar.png",
+			"small": "http://avatar.amuniversal.com/feature_avatars/avatars_large/features/db/small_avatar.png",
+			"tiny": "http://avatar.amuniversal.com/feature_avatars/avatars_large/features/db/tiny_avatar.png"
+		},
+		"political_slant": null
+	}
+},
+{
+	"feature_id": 112,
+	"position": 3,
+	"feature": {
+		"id": 112,
+		"title": "Non Sequitur",
+		"author": "Wiley Miller",
+		"icon_url": "http://avatar.amuniversal.com/feature_avatars/avatars_large/features/nq/tiny_avatar.png",
+		"icons": {
+			"large": "http://avatar.amuniversal.com/feature_avatars/avatars_large/features/nq/avatar.png",
+			"mid": "http://avatar.amuniversal.com/feature_avatars/avatars_large/features/nq/mid_avatar.png",
+			"small": "http://avatar.amuniversal.com/feature_avatars/avatars_large/features/nq/small_avatar.png",
+			"tiny": "http://avatar.amuniversal.com/feature_avatars/avatars_large/features/nq/tiny_avatar.png"
+		},
+		"political_slant": null
+	}
+},
+{
+	"feature_id": 569,
+	"position": 4,
+	"feature": {
+		"id": 569,
+		"title": "Peanuts",
+		"author": "Charles Schulz",
+		"icon_url": "http://avatar.amuniversal.com/feature_avatars/avatars_large/features/pe/tiny_avatar.png",
+		"icons": {
+			"large": "http://avatar.amuniversal.com/feature_avatars/avatars_large/features/pe/avatar.png",
+			"mid": "http://avatar.amuniversal.com/feature_avatars/avatars_large/features/pe/mid_avatar.png",
+			"small": "http://avatar.amuniversal.com/feature_avatars/avatars_large/features/pe/small_avatar.png",
+			"tiny": "http://avatar.amuniversal.com/feature_avatars/avatars_large/features/pe/tiny_avatar.png"
+		},
+		"political_slant": null
+	}
+},
+{
+	"feature_id": 66,
+	"position": 5,
+	"feature": {
+		"id": 66,
+		"title": "FoxTrot",
+		"author": "Bill Amend",
+		"icon_url": "http://avatar.amuniversal.com/feature_avatars/avatars_large/features/ft/tiny_avatar.png",
+		"icons": {
+			"large": "http://avatar.amuniversal.com/feature_avatars/avatars_large/features/ft/avatar.png",
+			"mid": "http://avatar.amuniversal.com/feature_avatars/avatars_large/features/ft/mid_avatar.png",
+			"small": "http://avatar.amuniversal.com/feature_avatars/avatars_large/features/ft/small_avatar.png",
+			"tiny": "http://avatar.amuniversal.com/feature_avatars/avatars_large/features/ft/tiny_avatar.png"
+		},
+		"political_slant": null
+	}
+},
+{
+	"feature_id": 613,
+	"position": 6,
+	"feature": {
+		"id": 613,
+		"title": "Pearls Before Swine",
+		"author": "Stephan Pastis",
+		"icon_url": "http://avatar.amuniversal.com/feature_avatars/avatars_large/features/pb/tiny_avatar.png",
+		"icons": {
+			"large": "http://avatar.amuniversal.com/feature_avatars/avatars_large/features/pb/avatar.png",
+			"mid": "http://avatar.amuniversal.com/feature_avatars/avatars_large/features/pb/mid_avatar.png",
+			"small": "http://avatar.amuniversal.com/feature_avatars/avatars_large/features/pb/small_avatar.png",
+			"tiny": "http://avatar.amuniversal.com/feature_avatars/avatars_large/features/pb/tiny_avatar.png"
+		},
+		"political_slant": null
+	}
+},
+{
+	"feature_id": 895,
+	"position": 7,
+	"feature": {
+		"id": 895,
+		"title": "Dilbert Classics",
+		"author": "Scott Adams",
+		"icon_url": "http://avatar.amuniversal.com/feature_avatars/avatars_large/features/dc/tiny_avatar.png",
+		"icons": {
+			"large": "http://avatar.amuniversal.com/feature_avatars/avatars_large/features/dc/avatar.png",
+			"mid": "http://avatar.amuniversal.com/feature_avatars/avatars_large/features/dc/mid_avatar.png",
+			"small": "http://avatar.amuniversal.com/feature_avatars/avatars_large/features/dc/small_avatar.png",
+			"tiny": "http://avatar.amuniversal.com/feature_avatars/avatars_large/features/dc/tiny_avatar.png"
+		},
+		"political_slant": null
+	}
+},
+{
+	"feature_id": 615,
+	"position": 8,
+	"feature": {
+		"id": 615,
+		"title": "Luann",
+		"author": "Greg Evans",
+		"icon_url": "http://avatar.amuniversal.com/feature_avatars/avatars_large/features/lu/tiny_avatar.png",
+		"icons": {
+			"large": "http://avatar.amuniversal.com/feature_avatars/avatars_large/features/lu/avatar.png",
+			"mid": "http://avatar.amuniversal.com/feature_avatars/avatars_large/features/lu/mid_avatar.png",
+			"small": "http://avatar.amuniversal.com/feature_avatars/avatars_large/features/lu/small_avatar.png",
+			"tiny": "http://avatar.amuniversal.com/feature_avatars/avatars_large/features/lu/tiny_avatar.png"
+		},
+		"political_slant": null
+	}
+},
+{
+	"feature_id": 633,
+	"position": 9,
+	"feature": {
+		"id": 633,
+		"title": "Big Nate",
+		"author": "Lincoln Peirce",
+		"icon_url": "http://avatar.amuniversal.com/feature_avatars/avatars_large/features/bn/tiny_avatar.png",
+		"icons": {
+			"large": "http://avatar.amuniversal.com/feature_avatars/avatars_large/features/bn/avatar.png",
+			"mid": "http://avatar.amuniversal.com/feature_avatars/avatars_large/features/bn/mid_avatar.png",
+			"small": "http://avatar.amuniversal.com/feature_avatars/avatars_large/features/bn/small_avatar.png",
+			"tiny": "http://avatar.amuniversal.com/feature_avatars/avatars_large/features/bn/tiny_avatar.png"
+		},
+		"political_slant": null
+	}
+},
+{
+	"feature_id": 64,
+	"position": 10,
+	"feature": {
+		"id": 64,
+		"title": "For Better or For Worse",
+		"author": "Lynn Johnston",
+		"icon_url": "http://avatar.amuniversal.com/feature_avatars/avatars_large/features/fb/tiny_avatar.png",
+		"icons": {
+			"large": "http://avatar.amuniversal.com/feature_avatars/avatars_large/features/fb/avatar.png",
+			"mid": "http://avatar.amuniversal.com/feature_avatars/avatars_large/features/fb/mid_avatar.png",
+			"small": "http://avatar.amuniversal.com/feature_avatars/avatars_large/features/fb/small_avatar.png",
+			"tiny": "http://avatar.amuniversal.com/feature_avatars/avatars_large/features/fb/tiny_avatar.png"
+		},
+		"political_slant": null
+	}
