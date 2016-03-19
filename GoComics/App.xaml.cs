@@ -50,7 +50,7 @@ namespace GoComics
 
             // Register any app specific types with the container
             Container.RegisterType<IGoComicsService, GoComicsService>(new ContainerControlledLifetimeManager());
-            Container.RegisterType<ILocalStorageService, JsonDataSourceService>(new ContainerControlledLifetimeManager());
+            Container.RegisterType<IDataStorageService, DataStorageService>(new ContainerControlledLifetimeManager());
             Container.RegisterType<IImageStorageService, ImageStorageService>(new ContainerControlledLifetimeManager());
 
             // Set a factory for the ViewModelLocator to use the container to construct view models so their

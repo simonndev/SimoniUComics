@@ -35,7 +35,7 @@ namespace GoComics.Shared.Observers
             throw new NotImplementedException();
         }
 
-        public void OnNext(Featured value)
+        public async void OnNext(Featured value)
         {
             if (value == null)
             {
@@ -49,22 +49,13 @@ namespace GoComics.Shared.Observers
                 Title = value.Feature.Title,
                 Author = value.Feature.Author,
                 Icon = new BitmapImage(new Uri("ms-appx:///Assets/blank_face.gif")),
-            IconUrl = value.Feature.IconUrl,
+                IconUrl = value.Feature.IconUrl,
                 IsPoliticalSlant = value.Feature.IsPoliticalSlant
             };
 
-            ApiResultObserverBase<Stream> observer = new ApiResultObserverBase<Stream>();
-            observer.Completed += async (imageStream) =>
-            {
-                // we only need to open the icon that was saved before.
-                feature.Icon = await this._imageStorage.Open(feature.Id.ToString(), "Features");
-            };
-            observer.Error += error =>
-            {
-                // TODO: show the reload icon
-            };
+            feature.Icon = await this._imageStorage.Open(feature.Id.ToString(), "Features");
 
-            this._service.DownloadImage(feature.IconUrl, observer);
+            //this._service.DownloadImage(feature.IconUrl, observer);
             this._allFeatureModels.Add(feature);
         }
     }

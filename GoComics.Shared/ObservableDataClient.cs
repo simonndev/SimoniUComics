@@ -83,21 +83,22 @@ namespace GoComics.Shared
         private static async Task<MemoryStream> ReadResponseToMemoryAsync(HttpResponseMessage response, IProgress<Tuple<long, long>> progress = null)
         {
             long contentLength = response.Content.Headers.ContentLength ?? -1L;
-            
+
             using (var stream = await response.Content.ReadAsStreamAsync())
+            using (var memory = new MemoryStream())
             {
-                var buffer = new byte[contentLength];
-                int offset = 0, read = 0;
+                var buffer = new byte[4096]; // 4KBs
+                int read;
 
                 do
                 {
-                    read = await stream.ReadAsync(buffer, offset, buffer.Length - offset);
-                    offset += read;
+                    read = await stream.ReadAsync(buffer, 0, buffer.Length);
+                    await memory.WriteAsync(buffer, 0, read);
 
-                    progress?.Report(Tuple.Create((long) offset, contentLength));
+                    progress?.Report(Tuple.Create(memory.Length, contentLength));
                 } while (read > 0);
 
-                return new MemoryStream(buffer);
+                return memory;
             }
         }
 
@@ -143,7 +144,7 @@ namespace GoComics.Shared
 
             if (token.Type == JTokenType.Array)
             {
-                foreach (var item in token)
+                foreach (var item in token.Children())
                 {
                     yield return item.ToObject<T>();
                 }
@@ -151,7 +152,8 @@ namespace GoComics.Shared
 
             if (token.Type == JTokenType.Object)
             {
-                foreach (var item in token[tokenName])
+                var destinationToken = token.SelectToken(tokenName);
+                foreach (var item in destinationToken.Children())
                 {
                     yield return item.ToObject<T>();
                 }

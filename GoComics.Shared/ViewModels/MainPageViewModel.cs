@@ -16,18 +16,18 @@ namespace GoComics.Shared.ViewModels
     {
         private readonly INavigationService _navigationService;
         private readonly IGoComicsService _service;
-        private readonly ILocalStorageService _localStorageService;
+        private readonly IDataStorageService _dataStorageService;
         private readonly IImageStorageService _imageStorageService;
 
         private double _percentComplete;
         private IReadOnlyCollection<FeatureModel> _allTimeFeatureCollection;
 
-        public MainPageViewModel(INavigationService navigationService, IGoComicsService service, ILocalStorageService localStorageService, IImageStorageService imageStorage)
+        public MainPageViewModel(INavigationService navigationService, IGoComicsService service, IDataStorageService dataStorageService, IImageStorageService imageStorageService)
         {
             this._navigationService = navigationService;
             this._service = service;
-            this._localStorageService = localStorageService;
-            this._imageStorageService = imageStorage;
+            this._dataStorageService = dataStorageService;
+            this._imageStorageService = imageStorageService;
 
             //ShowDetailCommand = new DelegateCommand<ItemClickEventArgs>((args) =>
             //{
@@ -52,9 +52,9 @@ namespace GoComics.Shared.ViewModels
         {
             base.OnNavigatedTo(e, viewModelState);
 
-            //Features features = await this._localStorageService.Read<Features>("features");
-            //if (null == features)
-            //{
+            List<FeatureModel> features = await this._dataStorageService.LoadAsync<List<FeatureModel>>("features");
+            if (null == features)
+            {
                 var progressIndicator = new Progress<Tuple<long, long>>((progress) =>
                 {
                     Debug.WriteLine("Current: {0} Total: {1}", progress.Item1, progress.Item2);
@@ -69,11 +69,11 @@ namespace GoComics.Shared.ViewModels
                 allFeaturesObserver.Completed += async (featureList) =>
                 {
                     // TODO: save to local storage
-                    await this._localStorageService.Write("features", featureList, true);
+                    await this._dataStorageService.SaveAsync("features", featureList);
                 };
 
                 this._service.GetAllFeatures(allFeaturesObserver, progressIndicator);
-            //}
+            }
 
             var progressIndicator1 = new Progress<Tuple<long, long>>((progress) =>
             {

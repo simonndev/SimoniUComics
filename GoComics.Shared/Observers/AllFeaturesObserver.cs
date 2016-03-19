@@ -42,13 +42,14 @@ namespace GoComics.Shared.Observers
             }
 
             Debug.WriteLine("ID: {0} - {1}", value.Id, value.Title);
+            string iconUrl = value.Icons.Medium ?? value.IconUrl;
 
             FeatureModel feature = new FeatureModel
             {
                 Id = value.Id,
                 Title = value.Title,
                 Author = value.Author,
-                IconUrl = value.IconUrl,
+                IconUrl = iconUrl,
                 IsPoliticalSlant = value.IsPoliticalSlant
             };
 
@@ -65,7 +66,14 @@ namespace GoComics.Shared.Observers
                 Debug.WriteLine("Download Image Error - Image {0}. {1}", feature.IconUrl, error.Message);
             };
 
-            this._service.DownloadImage(value.Icons.Medium, observer);
+            if (!string.IsNullOrWhiteSpace(iconUrl))
+            {
+                this._service.DownloadImage(iconUrl, observer);
+            }
+            else
+            {
+                Debug.WriteLine("ID: {0} - {1}", value.Id, value.Title);
+            }
 
             GetNext?.Invoke(feature);
 

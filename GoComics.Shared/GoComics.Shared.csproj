@@ -127,6 +127,7 @@
     <Compile Include="Observers\ApiStringObserver.cs" />
     <Compile Include="Observers\ImageObserver.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\DataStorageService.cs" />
     <Compile Include="Services\ImageStorageService.cs" />
     <Compile Include="Services\LocalStorageService.cs" />
     <Compile Include="Services\GoComicsClient.cs" />

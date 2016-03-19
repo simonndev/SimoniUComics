@@ -10,16 +10,15 @@ namespace GoComics.Shared.Models.UI
         private int _id;
         private string _title;
         private string _author;
-        private string _iconUrl;
         private BitmapImage _icon;
         private bool _isReady = false;
         private bool? _isPoliticalSlant;
 
-        public string IconUrl
-        {
-            get { return this._iconUrl; }
-            set { base.SetProperty(ref this._iconUrl, value); }
-        }
+        [DataMember]
+        public string IconUrl { get; set; }
+
+        [DataMember]
+        public string IconFilePath { get; set; }
 
         [DataMember]
         public int Id
@@ -42,6 +41,13 @@ namespace GoComics.Shared.Models.UI
             set { base.SetProperty(ref this._author, value); }
         }
 
+        [DataMember]
+        public bool? IsPoliticalSlant
+        {
+            get { return this._isPoliticalSlant; }
+            set { base.SetProperty(ref this._isPoliticalSlant, value); }
+        }
+
         [IgnoreDataMember]
         public BitmapImage Icon
         {
@@ -49,21 +55,16 @@ namespace GoComics.Shared.Models.UI
             set { base.SetProperty(ref this._icon, value); }
         }
 
-        [DataMember]
-        public string IconFilePath { get; set; }
-
-        [DataMember]
+        [IgnoreDataMember]
         public bool IsReady
         {
             get { return this._isReady; }
             set { base.SetProperty(ref this._isReady, value); }
         }
 
-        [DataMember]
-        public bool? IsPoliticalSlant
+        public override string ToString()
         {
-            get { return this._isPoliticalSlant; }
-            set { base.SetProperty(ref this._isPoliticalSlant, value); }
+            return string.Format("Feature {0} - {1}", this.Id, this.Title);
         }
     }
 }
